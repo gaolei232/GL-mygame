@@ -1,0 +1,6 @@
+﻿kind	name	hp	dmg	interval	speed	armor	drop_coin	drop_brick	drop_metal	tag
+walker	普通感染者	100	20	1.0	40	0	9	0.5	0.1	basic
+runner	奔跑者	70	12	0.6	92	0	11	0.5	0.2	fast
+brute	巨型感染者	1150	100	2.0	20	14	48	6.0	2.0	elite
+bomber	自爆感染者	90	200	2.0	55	0	14	0.5	0.5	burst
+boss	破城巨尸	3600	165	2.1	14	24	280	32.0	8.0	boss

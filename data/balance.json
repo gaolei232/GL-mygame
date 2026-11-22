@@ -1,0 +1,134 @@
+{
+  "schema_version": 2,
+  "note": "v2.0 重构后的全局参数。标注 derived 的数值由 TSV 推导，标注 todo 的数值需原型验证。",
+  "world": {
+    "wall_radius": 18.0,
+    "wall_arc_degrees": 150.0,
+    "wall_segments": 7,
+    "wall_hp_total": 85000.0,
+    "wall_height": 3.5,
+    "wall_thickness": 1.2,
+    "crystal_radius": 4.0,
+    "scout_radius_min": 26.0,
+    "scout_radius_max": 46.0,
+    "roam_radius": 80.0,
+    "spawn_radius": 38.0,
+    "map_half": 160.0,
+    "map_margin": 7.0,
+    "river_margin": 1.2
+  },
+  "phases": {
+    "scout_seconds": 90.0,
+    "build_seconds": 0.0,
+    "reward_choices": 3
+  },
+  "player": {
+    "max_hp": 100.0,
+    "speed": 7.0,
+    "respawn_base": 8.0,
+    "respawn_step": 6.0,
+    "respawn_cap": 24.0,
+    "start_ammo": 90,
+    "start_coin": 0,
+    "start_brick": 0,
+    "start_metal": 0,
+    "sprint_mult": 2.0,
+    "sprint_focus_block": true,
+    "blink_distance": 3.0,
+    "blink_cd": 10.0
+  },
+  "roll": {
+    "duration": 0.28,
+    "distance": 4.2,
+    "cooldown": 0.9,
+    "iframe": 0.2
+  },
+  "wall_rules": {
+    "repair_hp_per_brick": 900.0,
+    "repair_brick_cost": 1,
+    "repair_rate": 1.0,
+    "upgrade_brick_cost": 20,
+    "upgrade_coin_cost": 80,
+    "max_level": 3,
+    "rebuild_brick_cost": 30,
+    "rebuild_coin_cost": 150,
+    "build_brick_cost": 20
+  },
+  "loot": {
+    "box_count_scout": 18,
+    "open_radius": 2.2,
+    "guard_min": 1,
+    "guard_max": 2,
+    "chaser_count": 1,
+    "guard_radius_min": 3.0,
+    "guard_radius_max": 6.0,
+    "guard_leash": 8.0,
+    "spawn_min": 24.0,
+    "spawn_max": 146.0
+  },
+  "wave": {
+    "opening_burst": 0.4,
+    "opening_window": 2.5
+  },
+  "weapons": {
+    "crossbow": {
+      "id": "crossbow",
+      "cls": "ranged",
+      "range": 34.0,
+      "spread": 0.06,
+      "ammo_per_shot": 1
+    },
+    "light_crossbow": {
+      "id": "light_crossbow",
+      "cls": "ranged",
+      "range": 30.0,
+      "spread": 0.03,
+      "ammo_per_shot": 1
+    },
+    "rifle": {"id": "rifle", "cls": "ranged", "range": 42.0, "spread": 0.035, "ammo_per_shot": 1},
+    "pistol": {"id": "pistol", "cls": "ranged", "range": 26.0, "spread": 0.07, "ammo_per_shot": 1},
+    "rpg": {"id": "rpg", "cls": "ranged", "range": 36.0, "spread": 0.045, "ammo_per_shot": 3},
+    "longsword": {"id": "longsword", "cls": "melee", "range": 3.4, "spread": 0.0, "ammo_per_shot": 0},
+    "knife": {
+      "id": "knife",
+      "cls": "melee",
+      "range": 2.6,
+      "spread": 0.0,
+      "ammo_per_shot": 0
+    },
+    "hammer": {
+      "id": "hammer",
+      "cls": "tool",
+      "range": 3.2,
+      "spread": 0.0,
+      "ammo_per_shot": 0
+    }
+  },
+  "camera": {
+    "ortho_size": 26.0,
+    "zoom_min": 16.0,
+    "zoom_max": 30.0,
+    "yaw_degrees": 45.0,
+    "pitch_degrees": 52.0,
+    "follow_lerp": 6.0,
+    "focus_factor": 0.85
+  },
+  "tuning_todo": [
+    "wall_hp_total 85000 由 §8.2 的 Φ(w) 口径反推（954 DPS × 60s / 0.67），与 v1.7 的 11,433 不自洽，v2.0 采用前者",
+    "repair_hp_per_brick 900 使「1 砖 ≈ 0.07% 总墙血」，需与 repair_pack 一起校准",
+    "scout_seconds 90 秒未做节奏验证",
+    "开箱已改为搜索式（2026-11-09）：件数/等级/产量全在 loot_box.json；balance.loot 只剩箱子数量、半径与驻守参数",
+    "2026-11-08：guard_min/max 2–4→1–2、chaser_count=1（搜集期敌人过多），wave.opening_burst=0.4 让波次开局先落 40% 敌潮；三项都需重跑 balance_sweep 才能定稿"
+  ],
+  "guard": {
+    "station_radius": 5.5,
+    "station_arc_degrees": 150.0,
+    "attack_range": 1.6,
+    "move_speed": 3.5,
+    "breach_near_m": 12.0
+  },
+  "aim": {
+    "focus_speed_mult": 0.6,
+    "focus_spread_mult": 0.5
+  }
+}

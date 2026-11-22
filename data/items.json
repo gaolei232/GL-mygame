@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "note": "P1-4 养成数据。稀有度权重/词条数值全部在此，改表不用改代码。",
+  "bag_grid": {"cols": 5, "rows": 2},
+  "bag_footprints": {"0": [1, 1], "1": [1, 2], "2": [2, 1], "3": [2, 2]},
+  "slots": {"trait": 2, "attachment": 1},
+  "rarity": [
+    {"tier": 0, "name": "普通", "mult": 1.0, "sell": 40, "color": "#cfd4dc"},
+    {"tier": 1, "name": "精良", "mult": 1.25, "sell": 80, "color": "#7fc98a"},
+    {"tier": 2, "name": "稀有", "mult": 1.6, "sell": 140, "color": "#6aaef0"},
+    {"tier": 3, "name": "传说", "mult": 2.1, "sell": 240, "color": "#e0b34d"}
+  ],
+  "tier_weights": {
+    "1": [70, 30, 0, 0],
+    "2": [70, 30, 0, 0],
+    "3": [35, 45, 20, 0],
+    "4": [35, 45, 20, 0],
+    "5": [0, 30, 50, 20]
+  },
+  "stats": ["dmg", "rate", "spread", "repair", "speed"],
+  "items": [
+    {"id": "sharp", "name": "锋芒", "kind": "trait", "stat": "dmg", "base": 0.08, "desc": "伤害 +8%"},
+    {"id": "quick", "name": "速射", "kind": "trait", "stat": "rate", "base": -0.06, "desc": "射击间隔 -6%"},
+    {"id": "steady", "name": "稳固", "kind": "trait", "stat": "spread", "base": -0.10, "desc": "散布 -10%"},
+    {"id": "mason", "name": "巧匠", "kind": "trait", "stat": "repair", "base": 0.15, "desc": "修墙量 +15%"},
+    {"id": "scout", "name": "轻装", "kind": "trait", "stat": "speed", "base": 0.06, "desc": "移速 +6%"},
+    {"id": "barrel", "name": "配重枪管", "kind": "attachment", "stat": "dmg", "base": 0.12, "desc": "伤害 +12%"},
+    {"id": "trigger", "name": "轻机", "kind": "attachment", "stat": "rate", "base": -0.08, "desc": "射击间隔 -8%"}
+  ]
+}

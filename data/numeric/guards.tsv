@@ -1,0 +1,2 @@
+﻿kind	name	hp	armor	dmg	interval	aggro_r	reset_r	price
+default	守卫	480	4	16	1.0	18.0	5.0	0

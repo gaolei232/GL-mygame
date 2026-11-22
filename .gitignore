@@ -1,0 +1,85 @@
+# =============================================================
+# 城墙尸潮 G-A — Git 忽略规则
+# Godot 4.x / Python 工具链 / 本地环境与隐私
+# =============================================================
+
+# ---------- Godot 引擎 ----------
+# 导入缓存与全局脚本类缓存（体积大、可完全重建）
+.godot/
+# 导出产物
+build/
+dist/
+export/
+# 引擎在 Windows 上生成的崩溃/临时文件
+*.tmp
+*.translation
+mono_crash.*.json
+
+# ---------- 运行日志 ----------
+_run.log
+*.log
+
+# ---------- 美术源文件与中间产物（.gdignore 目录，不参与构建）----------
+# 版本库只收 art/assets/（唯一被引擎导入的运行时资源）。
+# .blend 源文件、原始素材、概念图、渲染评审图体积大，走本地归档而非 git。
+art/blender-work/
+art/blender-demo/
+art/raw/
+art/concept/
+art/baseline/
+art/review/
+art/trash/
+art/logs/
+
+# ---------- 工具备份文件 ----------
+*.blend1
+*.blend2
+*.bak
+*.orig
+
+# ---------- 测试运行截图（tests/ 运行时写入）----------
+shots/*.png
+shots/*.png.import
+
+# ---------- Python 工具链 ----------
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------- 本地环境与凭证（禁止入库）----------
+.env
+.env.*
+!.env.example
+*.local
+secrets.*
+credentials.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+.netrc
+.npmrc
+.pypirc
+config.local.*
+
+# ---------- 编辑器 / 系统 ----------
+.vscode/
+.idea/
+.claude/
+.workbuddy/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- 构建与依赖锁的临时目录 ----------
+.cache/
+node_modules/
